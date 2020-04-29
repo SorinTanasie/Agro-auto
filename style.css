@@ -1,0 +1,558 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: SofiaProLight, Montserrat;
+}
+
+:root {
+  --highlight-active-font-color: #1a8710;
+  --highlight-font-color: #feb616;
+  --main-font-color: #212121;
+  --footer-color: #f9f9f9;
+}
+
+.page-loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--footer-color);
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.page-loader img {
+  margin-bottom: 10px;
+}
+
+.loader {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid var(--main-font-color);
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: var(--main-font-color);
+  animation: loader-inner 2s infinite ease-in;
+}
+
+.nav {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav .logo{
+  width: 10rem;
+}
+nav ul {
+  float: right;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  list-style: none;
+}
+nav ul li a {
+  color: var(--main-font-color);
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+a.active,
+a:hover {
+  color: var(--highlight-active-font-color);
+  transition: 0.2s;
+}
+.checkbtn {
+  font-size: 30px;
+  color: #212121;
+  float: left;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
+}
+nav input {
+  display: none;
+}
+.fa-times {
+  display: none !important;
+}
+
+#log-in {
+  color: var(--main-font-color);
+  border: 2px solid var(--main-font-color);
+  border-radius: 25px;
+  font-size: 17px;
+  padding: 7px 25px;
+  margin: 20px 0;
+}
+
+.landing-page {
+  background: white;
+  height: calc(100vh - 80px);
+  display: block;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.container .text {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.text h1 {
+  font-size: 50px;
+  font-weight: 100;
+}
+.text span {
+  color: var(--highlight-active-font-color);
+}
+.text h4 {
+  font-size: 30px;
+  font-weight: 100;
+}
+.text p {
+  font-size: 25px;
+}
+.text a {
+  font-size: 20px;
+}
+.button a {
+  text-decoration: none;
+  color: white;
+  padding: 20px 60px;
+  background-color: var(--highlight-font-color);
+  border-radius: 50px;
+  transition: 0.5s;
+}
+.button a:hover {
+  padding: 25px 70px;
+}
+.image img {
+  width: 100%;
+  height: auto;
+}
+.carusel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: var(--footer-color);
+  margin: 20px 0;
+  padding: 2px;
+}
+.carusel ul {
+  display: flex;
+  width: 80%;
+  overflow: hidden;
+}
+.item {
+  display: block;
+  list-style: none;
+}
+.carusel img {
+  align-items: center;
+  display: flex;
+  margin: 1rem;
+  text-align: center;
+}
+.carusel i {
+  font-size: 3em;
+  margin: 1rem;
+}
+.carusel i:hover {
+  cursor: pointer;
+}
+
+.content {
+  height: 600px;
+}
+.sectiune-flexibilitate .text p {
+  color: var(--highlight-font-color);
+}
+.platforma {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.platforma h4 {
+  font-size: 28px;
+  color: var(--highlight-active-font-color);
+}
+.platforma .switch {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.platforma .switch h1 {
+  font-size: 45px;
+  border-bottom: 5px solid rgba(254, 182, 22, 0.5);
+  transition: 0.5s;
+}
+.sectiune-clienti,
+.sectiune-furnizori {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: var(--highlight-active-font-color);
+}
+
+.platforma p {
+  color: var(--main-font-color);
+  font-size: 25px;
+  padding: 10px;
+}
+.platforma a {
+  text-decoration: underline;
+  color: var(--highlight-active-font-color);
+}
+.platforma span {
+  font-size: 35px;
+  color: var(--highlight-active-font-color);
+  height: 50px;
+  padding-right: 5px;
+}
+.d-none {
+  display: none !important;
+}
+.switch-active {
+  color: var(--highlight-font-color);
+  border-bottom: 5px solid var(--highlight-font-color) !important ;
+}
+.sectiune-mica .incearca {
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--footer-color);
+  justify-content: space-evenly;
+}
+.sectiune-mica h4 {
+  font-weight: bold;
+}
+.sectiune-mica-numbers .rezultate {
+  flex-direction: row;
+}
+
+.sectiune-mica {
+  height: 200px;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  background-color: var(--footer-color);
+}
+.footer h4 {
+  margin: 15px 0;
+  font-weight: bold;
+}
+.footer a {
+  margin: 2px 0;
+  color: var(--main-font-color);
+}
+.footer {
+  align-items: flex-start;
+}
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+.footer-element {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  flex-grow: 1;
+}
+.footer-element p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+.footer-element:nth-child(1) {
+  flex-grow: 2;
+}
+.footer-element .logo {
+  height: auto;
+  width: 10rem;
+}
+.magazin-play {
+  height: auto;
+  width: 5rem;
+}
+.social-links img {
+  width: auto;
+  height: 1.5rem;
+}
+.counter-element h1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .logo {
+    width: 160px;
+  }
+  .nav {
+    background-color: white;
+    width: 100%;
+  }
+  nav ul li a {
+    font-size: 13px;
+    padding: 7px 8px;
+  }
+  .container {
+    padding: 0px 1rem;
+    flex-wrap: wrap;
+  }
+  .carusel {
+    padding: 1em;
+  }
+  .carusel i {
+    font-size: 2em;
+  }
+  .content {
+    height: 100%;
+  }
+  .landing-page {
+    height: 100%;
+  }
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+  .text h4 {
+    font-size: 20px;
+  }
+  .text h1 {
+    font-size: 30px;
+    margin: 30px 0;
+  }
+  .text p {
+    font-size: 15px;
+    margin: 10px 0;
+  }
+  .button {
+    margin: 30px 0;
+  }
+  image img {
+    height: 85%;
+  }
+  .platforma .switch h1 {
+    font-size: 35px;
+    margin: 20px 0;
+  }
+  .platforma h4 {
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 100;
+  }
+  .platforma p {
+    font-size: 20px;
+  }
+  .sectiune-mica-numbers h1 {
+    font-size: 50px;
+    margin: 20px 0;
+  }
+
+  .sectiune-clienti,
+  .sectiune-furnizori {
+    flex-direction: column;
+  }
+  .footer-element {
+    align-items: center;
+  }
+  .footer-bottom {
+    position: relative;
+    bottom: 0;
+  }
+}
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+    max-width: 20px !important;
+  }
+  nav {
+    position: fixed;
+    z-index: 1500;
+    justify-content: space-around !important;
+  }
+  .nav::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 80px);
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s;
+  }
+
+  .open .fa-times {
+    display: inline-block !important;
+  }
+  .open .fa-bars {
+    display: none;
+  }
+  .open .nav::before {
+    opacity: 1;
+    transform: scale(1);
+    border-bottom: 1px solid var(--main-font-color);
+  }
+  .open nav ul {
+    left: 0;
+  }
+  .nav ul {
+    position: fixed;
+    width: 80%;
+    height: 100vh;
+    background: white;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: 0.5s;
+    z-index: 1200;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  #log-in {
+    padding: 7px 15px;
+    font-size: 16px;
+  }
+
+  .landing-page {
+    padding-top: 80px;
+  }
+
+  .button {
+    margin: 30px 0;
+  }
+  .carusel img {
+    height: auto;
+    width: 100px;
+    margin: 6px;
+  }
+
+  .footer h4 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .sectiune-mica-numbers .container {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1025px) {
+  .text {
+    flex: 1;
+  }
+  .image {
+    flex: 1.1;
+  }
+  .platforma {
+    height: 90vh;
+  }
+  .platforma p {
+    width: 45%;
+  }
+
+  .sectiune-mica-numbers {
+    height: 200px;
+  }
+  .sectiune-mica-numbers h1 {
+    float: right;
+  }
+
+  .footer {
+    height: 400px;
+  }
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
